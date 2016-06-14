@@ -21,24 +21,27 @@
             android:layout_height="wrap_content">
 
             <TextView
+                style="@style/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/person_name"
                 android:id="@+id/tVName" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/eTName" />
+                android:id="@+id/eTName"
+                android:singleLine="false" />
 
             <TextView
+                style="@style/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/person_surname"
                 android:id="@+id/tVSurname" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/eTSurname" />
 
@@ -48,34 +51,61 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/date"
+                    android:id="@+id/tVDateText"
+                    android:clickable="true" />
+
+                <TextView
+                    style="@style/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/time"
+                    android:id="@+id/tVTimeText"
+                    android:clickable="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:id="@+id/tVDate"
                     android:clickable="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/time"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
                     android:id="@+id/tVTime"
                     android:clickable="true" />
             </LinearLayout>
 
             <TextView
+                style="@style/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/nights"
                 android:id="@+id/tVNights" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/eTNights" />
 
             <TextView
+                style="@style/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/gender"
@@ -100,6 +130,7 @@
             </RadioGroup>
 
             <TextView
+                style="@style/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/food"
@@ -124,6 +155,7 @@
                 android:id="@+id/checkBoxSupper" />
 
             <TextView
+                style="@style/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cities_choose"
@@ -137,6 +169,7 @@
                 android:id="@+id/spinnerCities" />
 
             <TextView
+                style="@style/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/wishes"
