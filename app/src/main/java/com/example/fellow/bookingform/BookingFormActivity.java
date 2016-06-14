@@ -16,10 +16,13 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.fellow.bookingform.dto.BookingRecord;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class BookingFormActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -52,7 +55,9 @@ public class BookingFormActivity extends AppCompatActivity implements View.OnCli
         wishes = (EditText) findViewById(R.id.eTWish);
         send = (Button) findViewById(R.id.btSend);
 
-        send.setOnClickListener(this);
+        if (send != null) {
+            send.setOnClickListener(this);
+        }
         date.setOnClickListener(this);
         time.setOnClickListener(this);
 
@@ -61,19 +66,19 @@ public class BookingFormActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()) {
+        switch (v.getId()) {
             case R.id.tVDate:
-                new DatePickerDialog(BookingFormActivity.this, d,
+                DatePickerDialog datePickerDialog = new DatePickerDialog(BookingFormActivity.this, d,
                         calendar.get(Calendar.YEAR),
                         calendar.get(Calendar.MONTH),
-                        calendar.get(Calendar.DAY_OF_MONTH))
-                        .show();
+                        calendar.get(Calendar.DAY_OF_MONTH));
+                datePickerDialog.show();
                 break;
             case R.id.tVTime:
-                new TimePickerDialog(BookingFormActivity.this, t,
+                TimePickerDialog timePickerDialog = new TimePickerDialog(BookingFormActivity.this, t,
                         calendar.get(Calendar.HOUR_OF_DAY),
-                        calendar.get(Calendar.MINUTE), true)
-                        .show();
+                        calendar.get(Calendar.MINUTE), true);
+                timePickerDialog.show();
                 break;
             case R.id.btSend:
                 BookingRecord record = new BookingRecord();
@@ -82,7 +87,7 @@ public class BookingFormActivity extends AppCompatActivity implements View.OnCli
                 record.setDate(date.getText().toString());
                 record.setTime(time.getText().toString());
                 record.setNights(nights.getText().toString());
-                switch(gender.getCheckedRadioButtonId()) {
+                switch (gender.getCheckedRadioButtonId()) {
                     case R.id.radioBtMale:
                         record.setGender(male.getText().toString());
                         break;
@@ -122,4 +127,17 @@ public class BookingFormActivity extends AppCompatActivity implements View.OnCli
     };
 
 
+    /*@Override
+    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+        date.setText(DateUtils.formatDateTime(this,
+                calendar.getTimeInMillis(),
+                DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR));
+    }
+
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        time.setText(DateUtils.formatDateTime(this,
+                calendar.getTimeInMillis(),
+                DateUtils.FORMAT_SHOW_TIME));
+    }*/
 }
