@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">BookingForm</string>
+    <string name="person_name">Введите имя</string>
+    <string name="person_surname">Введите фамилию</string>
+    <string name="date">Дата заезда</string>
+    <string name="time">Время заезда</string>
+    <string name="nights">Количество ночей</string>
+    <string name="gender">Пол</string>
+    <string name="male">М</string>
+    <string name="female">Ж</string>
+    <string name="food">Питание</string>
+    <string name="breakfast">завтрак</string>
+    <string name="dinner">обед</string>
+    <string name="supper">ужин</string>
+    <string name="cities_choose">Выберите город</string>
+
+    <string-array name="cities">
+        <item>Минск</item>
+        <item>Москва</item>
+        <item>Лондон</item>
+    </string-array>
+
+    <string name="wishes">Пожелания</string>
+    <string name="bt_send">Отправить</string>
 </resources>
