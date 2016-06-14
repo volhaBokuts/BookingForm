@@ -9,9 +9,10 @@
     </style>
 
     <style name="text">
-        <item name="android:textSize">6pt</item>
+        <item name="android:textSize">7pt</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginBottom">5dp</item>
-    </style>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>5
 
 </resources>

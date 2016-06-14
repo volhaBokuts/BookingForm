@@ -17,6 +17,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.fellow.bookingform.dto.BookingRecord;
+
 import java.util.Calendar;
 
 public class BookingFormActivity extends AppCompatActivity implements View.OnClickListener {
@@ -24,6 +26,7 @@ public class BookingFormActivity extends AppCompatActivity implements View.OnCli
     EditText name, surname, nights, wishes;
     TextView date, time;
     RadioGroup gender;
+    RadioButton male, female;
     CheckBox breakfast, dinner, supper;
     Spinner cities;
     Button send;
@@ -40,6 +43,8 @@ public class BookingFormActivity extends AppCompatActivity implements View.OnCli
         time = (TextView) findViewById(R.id.tVTime);
         nights = (EditText) findViewById(R.id.eTNights);
         gender = (RadioGroup) findViewById(R.id.radioGroupGender);
+        male = (RadioButton) findViewById(R.id.radioBtMale);
+        female = (RadioButton) findViewById(R.id.radioBtFemale);
         breakfast = (CheckBox) findViewById(R.id.checkBoxBreakfast);
         dinner = (CheckBox) findViewById(R.id.checkBoxDinner);
         supper = (CheckBox) findViewById(R.id.checkBoxSupper);
@@ -69,6 +74,23 @@ public class BookingFormActivity extends AppCompatActivity implements View.OnCli
                         calendar.get(Calendar.HOUR_OF_DAY),
                         calendar.get(Calendar.MINUTE), true)
                         .show();
+                break;
+            case R.id.btSend:
+                BookingRecord record = new BookingRecord();
+                record.setName(name.getText().toString());
+                record.setSurname(surname.getText().toString());
+                record.setDate(date.getText().toString());
+                record.setTime(time.getText().toString());
+                record.setNights(nights.getText().toString());
+                switch(gender.getCheckedRadioButtonId()) {
+                    case R.id.radioBtMale:
+                        record.setGender(male.getText().toString());
+                        break;
+                    case R.id.radioBtFemale:
+                        record.setGender(female.getText().toString());
+                }
+                record.setCity(cities.getSelectedItem().toString());
+                record.setWish(wishes.getText().toString());
         }
     }
 

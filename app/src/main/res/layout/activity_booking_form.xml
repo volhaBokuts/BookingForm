@@ -24,14 +24,15 @@
                 style="@style/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:text="@string/person_name"
                 android:id="@+id/tVName" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/eTName"
-                android:singleLine="false" />
+                android:inputType="text"
+                android:id="@+id/eTName" />
 
             <TextView
                 style="@style/text"
@@ -43,6 +44,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
                 android:id="@+id/eTSurname" />
 
             <LinearLayout
@@ -85,7 +87,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_gravity="start"
                     android:id="@+id/tVTime"
                     android:clickable="true" />
             </LinearLayout>
@@ -176,7 +177,7 @@
                 android:id="@+id/tVWish" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
                 android:scrollbars="vertical"
