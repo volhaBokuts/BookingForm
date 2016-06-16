@@ -2,6 +2,7 @@ package com.example.fellow.bookingform;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -82,6 +83,7 @@ public class BookingFormActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.btSend:
                 BookingRecord record = new BookingRecord();
+
                 record.setName(name.getText().toString());
                 record.setSurname(surname.getText().toString());
                 record.setDate(date.getText().toString());
@@ -96,6 +98,10 @@ public class BookingFormActivity extends AppCompatActivity implements View.OnCli
                 }
                 record.setCity(cities.getSelectedItem().toString());
                 record.setWish(wishes.getText().toString());
+
+                Intent intent = new Intent(BookingFormActivity.this, RecordsActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 
